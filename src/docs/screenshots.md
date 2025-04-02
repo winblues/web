@@ -1,24 +1,34 @@
 ## Main Desktop
 
-![https://blue95.neocities.org/screenshot-orig.png](https://blue95.neocities.org/screenshot-orig.png)
+<a href="https://blue95.neocities.org/screenshot-orig.png">
+![](https://blue95.neocities.org/screenshot-orig.png)
+</a>
 
 ## Mail Client
 
-![https://blue95.neocities.org/screenshot-mail.png](https://blue95.neocities.org/screenshot-mail.png)
+<a href="https://blue95.neocities.org/screenshot-mail.png">
+![](https://blue95.neocities.org/screenshot-mail.png)
+</a>
 
 The default mail application is [Epyrus](http://www.epyrus.org), pictured above with the [Moonscape](https://addons.epyrus.org/addon/moonscape/) theme.
 
 ## Web Browser
 
-![https://blue95.neocities.org/screenshot-mail.png](https://blue95.neocities.org/screenshot-web.png)
+<a href="https://blue95.neocities.org/screenshot-web.png">
+![](https://blue95.neocities.org/screenshot-web.png)
+</a>
 
 The default web browser is [Pale Moon](https://linux.palemoon.org), pictured above with the [Moonscape](https://addons.palemoon.org/addon/moonscape/) theme.
 
 ## Software Development
 
-![https://blue95.neocities.org/screenshot-code.png](https://blue95.neocities.org/screenshot-code.png)
+<a href="https://blue95.neocities.org/screenshot-code.png">
+![](https://blue95.neocities.org/screenshot-code.png)
+</a>
 
 
 ## Ultrawide Display
 
-![https://blue95.neocities.org/screenshot-wide.png](https://blue95.neocities.org/screenshot-wide.png)
+<a href="https://blue95.neocities.org/screenshot-wide.png">
+![](https://blue95.neocities.org/screenshot-wide.png)
+</a>

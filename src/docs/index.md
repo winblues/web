@@ -1,7 +1,7 @@
 ![main-screenshot](https://blue95.neocities.org/terminal.png)
 
 Blue95 is a modern and lightweight desktop experience that is reminiscent of a bygone era of computing.
-Based on Fedora Atomic Xfce with the [Chicago95](https://github.com/grassmunk/Chicago95) theme.
+Based on [Fedora Atomic Xfce](https://fedoraproject.org/spins/xfce) with the [Chicago95](https://github.com/grassmunk/Chicago95) theme.
 
 For more screenshots, see the [Showcase](screenshots.md).
 ## Try It Out

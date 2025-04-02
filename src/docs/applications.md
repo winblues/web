@@ -48,4 +48,11 @@ Audacious has full support for custom Winamp skins, such as those found in the I
 If Audacious with a Winamp skin is too small, try enabling Double Size with Ctrl+D.
 ///
 
+# Liferea
+
+<a href="../images/liferea.png">
+![liferea](./images/liferea.png)
+</a>
+
+Out of the box, the RSS reader application [Liferea](https://github.com/lwindolf/liferea) should have the appropriate theme and icons.
 
