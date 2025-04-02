@@ -5,6 +5,6 @@ mkdocs +args:
   podman run \
     --rm \
     -it \
-    -v $PWD:/app:Z \
+    -v $PWD/src:/app:Z \
     --publish 8000:8000 \
     python:3.13 bash -c 'cd /app; pip install mkdocs mkdocs-terminal && mkdocs {{args}}'
