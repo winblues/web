@@ -19,6 +19,12 @@ theme:
 markdown_extensions:
   - attr_list
   - md_in_html
+  - pymdownx.superfences          # required extension
+  - pymdownx.highlight:
+      use_pygments: true          # use pygments library    
+      pygments_style: github-dark # use 'github-dark' style
+      noclasses: true             # update HTML style attr
+  - pymdownx.inlinehilite         # style inline code
   - pymdownx.blocks.details:
       types:
         - name: tip
