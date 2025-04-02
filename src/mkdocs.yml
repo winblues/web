@@ -1,4 +1,5 @@
 site_name: Blue95
+site_url: https://blues.win/95/docs/
 nav:
     - Home: 'index.md'
     - Install: 'install.md'
