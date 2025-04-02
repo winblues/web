@@ -16,7 +16,7 @@ After installing Vauxite, you can rebase directly to Blue95:
 ```
 
 # From Other Atomic Desktops
-If you are currently using another atomic desktop such as Bazzite or Fedora Silverblue, you can rebase to Blue95.
+If you are currently using another atomic desktop such as [Bazzite](https://bazzite.gg) or [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue), you can rebase to Blue95.
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
 
