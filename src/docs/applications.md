@@ -1,9 +1,17 @@
+# Pale Moon
+
+<a href="../images/palemoon.png">
+![installer](./images/palemoon.png)
+</a>
+
+The [Pale Moon](https://linux.palemoon.org) browser is included in Blue95 by default. The [Moonscape](https://addons.palemoon.org/addon/moonscape/) theme must be manually installed.
+
 # LibreOffice Writer
 
 <a href="https://blues.win/95/screenshot-libreoffice.png">
 ![LibreOffice Chicago95 Icon Set](https://blues.win/95/screenshot-libreoffice.png)
 </a>
-Blue95 provides the Chicago95 icon set for LibreOffice Writer, but it must be installed manually.
+The Chicago95 icon set for LibreOffice Writer is available in Blue95, but it must be installed manually.
 
 First copy the `.oxt` file to a location accessible from within the Flatpak environment:
 

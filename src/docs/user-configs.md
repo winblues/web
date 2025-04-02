@@ -1,3 +1,5 @@
+# Xfce Settings
+
 Blue95 has an opinionated design for its desktop environment and includes automated management for user-level Xfce configuration files.
 The component responsible for this configuration management is called `winblues-chezmoi`, which utilizes both [chezmoi](https://www.chezmoi.io) and [xfconf-profile](https://github.com/winblues/xfconf-profile) to manage dotfiles in the user's home directories related to Xfce.
 

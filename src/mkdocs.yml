@@ -6,7 +6,7 @@ nav:
     - Showcase: 'screenshots.md'
     - Configuration:
         - Applications: 'applications.md'
-        - Xfce User Config: 'user-configs.md'
+        - Xfce Settings: 'user-configs.md'
     - GitHub: 'https://github.com/winblues/blue95'
 theme:
   name: terminal
