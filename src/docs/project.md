@@ -1,6 +1,6 @@
 ## Core System
 
-Blue95 is based on the solid foundation of Fedora Xfce, packaged as an OCI image on [Quay](https://quay.io/repository/fedora-ostree-desktops/xfce-atomic?tab=info).
+Blue95 is based on the solid foundation of [Fedora Xfce](https://fedoraproject.org/spins/xfce), packaged as an OCI image on [Quay](https://quay.io/repository/fedora-ostree-desktops/xfce-atomic?tab=info).
 We heavily utilize tweaks from [Universal Blue](https://github.com/ublue-os) (e.g. codecs, automatic updates, etc) to produce a more usable out-of-the box experience.
 
 Following the lead of Universal Blue, Blue95 embraces [Flathub](https://flathub.org) as the universal Linux App Store for GUI applications.

@@ -5,4 +5,5 @@
 - [Timothée Ravier](https://github.com/travier) for providing `fedora-ostree-desktops/xfce-atomic` images.
 - [BlueBuild](https://github.com/blue-build) for the great tooling.
 - [Fedora](https://fedoraproject.org/spins/xfce), [Xfce](https://www.xfce.org/) and the [Fedora Xfce SIG](https://fedoraproject.org/wiki/SIGs/Xfce)
- 
+
+Site built with [MkDocs](http://www.mkdocs.org) and [Terminal for MkDocs](https://github.com/ntno/mkdocs-terminal).
