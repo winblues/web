@@ -21,9 +21,9 @@ markdown_extensions:
   - md_in_html
   - pymdownx.blocks.details:
       types:
-        - name: info
+        - name: tip
           class: terminal-alert
-          title: Info
+          title: Tip
         - name: warn
           class: 'terminal-alert terminal-alert-error'
           title: Warning
