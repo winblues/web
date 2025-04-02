@@ -1,0 +1,31 @@
+site_name: Blue95
+nav:
+    - Home: 'index.md'
+    - Install: 'install.md'
+    - Showcase: 'screenshots.md'
+    - Configuration:
+        - Applications: 'applications.md'
+        - Xfce User Config: 'user-configs.md'
+    - GitHub: 'https://github.com/winblues/blue95'
+theme:
+  name: terminal
+  palette: dark
+  features:
+    - footer.prev_next
+    #- navigation.side.toc.hide
+    #- navigation.side.hide
+    - navigation.top.cursor_animation.hide
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.details:
+      types:
+        - name: info
+          class: terminal-alert
+          title: Info
+        - name: warn
+          class: 'terminal-alert terminal-alert-error'
+          title: Warning
+        - name: important
+          class: 'terminal-alert terminal-alert-primary'
+          title: Important

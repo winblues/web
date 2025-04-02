@@ -1,0 +1,3 @@
+[build]
+  command = "pip install mkdocs mkdocs-terminal && cd mkdocs && mkdocs build -d ../95/docs && cd .. && rm -rf mkdocs"
+  publish = "."
