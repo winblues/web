@@ -4,13 +4,17 @@ nav:
     - Home: 'index.md'
     - Install: 'install.md'
     - Showcase: 'screenshots.md'
-    - Configuration:
-        - Applications: 'applications.md'
-        - Xfce Settings: 'user-configs.md'
     - GitHub: 'https://github.com/winblues/blue95'
+    - About:
+      - Project Design: 'project.md'
+      - Thanks: 'thanks.md'
+    - User Guide:
+      - Applications: 'applications.md'
+      - Xfce Settings: 'user-configs.md'
 theme:
   name: terminal
   palette: dark
+  custom_dir: overrides
   features:
     - footer.prev_next
     #- navigation.side.toc.hide

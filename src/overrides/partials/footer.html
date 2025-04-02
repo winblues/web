@@ -1,0 +1,13 @@
+{% import 'macros/prev-next.j2' as prev_next_helper with context %}
+<footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+            <a href="https://github.com/winblues">Winblues</a> · <a href="https://github.com/winblues/blue95">Blue95</a> · <a href="https://github.com/winblues/vauxite">Vauxite</a> 
+        </div>
+        {%- if page and (page.next_page or page.previous_page) %}
+        <div id="terminal-mkdocs-footer-prev-next">
+            {{ prev_next_helper.make_prev_next() }}
+        </div>
+        {%- endif %}
+    </div>
+</footer>
