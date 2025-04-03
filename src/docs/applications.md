@@ -56,3 +56,11 @@ If Audacious with a Winamp skin is too small, try enabling Double Size with Ctrl
 
 Out of the box, the RSS reader application [Liferea](https://github.com/lwindolf/liferea) should have the appropriate theme and icons.
 
+# Geany
+
+<a href="../images/geany.png">
+![geany](./images/geany.png)
+</a>
+
+The lightweight IDE [Geany](https://www.geany.org) has the correct theming out of the box.
+
