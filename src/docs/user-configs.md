@@ -37,7 +37,7 @@ The format of this file can be found in chezmoi's documentation for [.chezmoiign
 
 ## Excluding Properties
 
-[xfconf-profile](https://github.com/winblues/xfconf-profile) is a command-line tool developed specifically for Blue95 and other Xfce-based desktop images in the Winblues organization. The JSON profile that Blue95 uses is stored at `/usr/share/xfconf-profile/default.json` and defines properties for the Blue95 environment, such as:
+[xfconf-profile](https://github.com/winblues/xfconf-profile) is a command-line tool developed specifically for Blue95 and other Xfce-based desktop images in the [Winblues](https://github.com/winblues) organization. The JSON profile that Blue95 uses is stored at `/usr/share/xfconf-profile/default.json` and defines properties for the Blue95 environment, such as:
 ```json
 {
   "properties": {
@@ -50,9 +50,6 @@ The format of this file can be found in chezmoi's documentation for [.chezmoiign
     },
     "xfwm4": {
       "/general/theme": "Chicago95"
-    },
-    "xfce4-keyboard-shortcuts": {
-      "/commands/custom/Super_L": "/usr/bin/xfce4-popup-whiskermenu"
     },
     "xfce4-notifyd": {
       "/theme": "Chicago95",
