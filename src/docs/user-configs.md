@@ -3,24 +3,37 @@
 Blue95 has an opinionated design for its desktop environment and includes automated management for user-level Xfce configuration files.
 The component responsible for this configuration management is called `winblues-chezmoi`, which utilizes both [chezmoi](https://www.chezmoi.io) and [xfconf-profile](https://github.com/winblues/xfconf-profile) to manage dotfiles in the user's home directories related to Xfce.
 
-Note that although `winblues-chezmoi` is configurable to exclude updating certain dotfiles and `xfconf` properties, this is meant to be
-used sparingly. If you want more control over the appearance of the desktop environment, it is suggested to either disable the `winblues-chezmoi` service and manually manage your own dotfiles or use the base [winblues/vauxite](https://github.com/winblues/vauxite) image instead of Blue95.
 
-## Disabling `winblues-chezmoi`
+## Toggling `winblues-chezmoi`
 
-/// important
-    open: True
-Some of the following configuration settings for `winblues-chezmoi` have not been fully implemented. If you do not want any level of config file management, you can disable the service for the time being.
-///
+By default, `winblues-chezmoi` runs once at initialization and then disables itself. If you want continuous updates and tweaks based on changes upstream to either Chicago95 or Xfce, you can enable the service like so:
 
-To disable `winblues-chezmoi` completely, run the following:
+```bash
+systemctl --user unmask winblues-chezmoi.service
+```
+
+If you want to manually run the service just once without enabling it, you can run:
+
+```bash
+/usr/libexec/winblues-chezmoi
+```
+
+To disable `winblues-chezmoi` after manually enabling it, run the following:
 ```bash
 systemctl --user mask winblues-chezmoi.service
 ```
 
 ## Excluding Files
 
-The Xfce desktop environment stores its configuration files in the user's home directory under `~/.config/xfce4`. These files are managed by `winblues-chezmoi`. To configure `winblues-chezmoi` to not manage certain files, create a file called `~/.config/winblues/chezmoiignore`
+/// important
+    open: True
+Some of the following configuration settings have not been fully implemented. If you do not want any amount of Xfce settings management, you should disable the service.
+///
+
+Note that although `winblues-chezmoi` is configurable to exclude updating certain dotfiles and `xfconf` properties, this is meant to be
+used sparingly. If you want more control over the appearance of the desktop environment, it is suggested to either disable the `winblues-chezmoi` service and manually manage your own dotfiles or use the base [winblues/vauxite](https://github.com/winblues/vauxite) image instead of Blue95.
+
+The Xfce desktop environment stores its configuration files in the user's home directory under `~/.config/xfce4`, which are managed by `winblues-chezmoi`. To configure `winblues-chezmoi` to not manage certain files, create a file called `~/.config/winblues/chezmoiignore`
 
 ```bash
 # Exclude changes to the terminal config file
