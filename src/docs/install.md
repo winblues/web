@@ -12,7 +12,7 @@ Due to issues with Blue95's installer ISO, we recommend installing another Xfce-
 After installing Vauxite, you can rebase directly to Blue95:
 
 ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/winblues/blue95:latest
+sudo bootc switch ghcr.io/winblues/blue95:latest
 ```
 
 # From Other Atomic Desktops
@@ -21,13 +21,13 @@ If you are currently using another atomic desktop such as [Bazzite](https://bazz
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
 
 ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/winblues/blue95:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/winblues/blue95:latest
 ```
 
 - Reboot and then rebase to the signed image:
 
 ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/winblues/blue95:latest
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/winblues/blue95:latest
 ```
 
 It is recommended to create a new user after rebasing.
