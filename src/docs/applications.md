@@ -1,15 +1,15 @@
 # Pale Moon
 
-<a href="../images/palemoon.png">
-![palemoon](./images/palemoon.png)
+<a href="../img/palemoon.png">
+![palemoon](./img/palemoon.png)
 </a>
 
 The [Pale Moon](https://linux.palemoon.org) browser is included in Blue95 by default. The [Moonscape](https://addons.palemoon.org/addon/moonscape/) theme must be manually installed.
 
 # Epyrus
 
-<a href="../images/email.png">
-![email](./images/email.png)
+<a href="../img/email.png">
+![email](./img/email.png)
 </a>
 
 The default mail application is [Epyrus](http://www.epyrus.org). The [Moonscape](https://addons.epyrus.org/addon/moonscape/) theme must be manually installed.
@@ -34,8 +34,8 @@ Once installed, open the Tools > Options menu, navigate to LibreOffice > View, a
 # Audacious
 
 <figure markdown>
-<a href="../images/audacious.png">
-![audacious](./images/audacious.png)
+<a href="../img/audacious.png">
+![audacious](./img/audacious.png)
 </a>
 </figure>
 
@@ -50,16 +50,16 @@ If Audacious with a Winamp skin is too small, try enabling Double Size with Ctrl
 
 # Liferea
 
-<a href="../images/liferea.png">
-![liferea](./images/liferea.png)
+<a href="../img/liferea.png">
+![liferea](./img/liferea.png)
 </a>
 
 Out of the box, the RSS reader application [Liferea](https://github.com/lwindolf/liferea) should have the appropriate theme and icons.
 
 # Geany
 
-<a href="../images/geany.png">
-![geany](./images/geany.png)
+<a href="../img/geany.png">
+![geany](./img/geany.png)
 </a>
 
 The lightweight IDE [Geany](https://www.geany.org) has the correct theming out of the box.

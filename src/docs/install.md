@@ -7,7 +7,7 @@
 There is currently a bug with the Blue95 installer ISO.
 ///
 
-Due to issues with Blue95's installer ISO, we recommend installing another Xfce-based Fedora Atomic desktop with a working ISO such as <img src="../images/emblems/winblues.png" style="height: 1em; vertical-align: middle;"> [winblues/vauxite](https://github.com/winblues/vauxite). Use [vauxite-base-latest.iso](https://pub-969fbc86b5f24e4d81c6d022e8fd8dde.r2.dev/vauxite-base-latest.iso) to install Vauxite.
+Due to issues with Blue95's installer ISO, we recommend installing another Xfce-based Fedora Atomic desktop with a working ISO such as <img src="../img/emblems/winblues.png" style="height: 1em; vertical-align: middle;"> [winblues/vauxite](https://github.com/winblues/vauxite). Use [vauxite-base-latest.iso](https://pub-969fbc86b5f24e4d81c6d022e8fd8dde.r2.dev/vauxite-base-latest.iso) to install Vauxite.
 
 After installing Vauxite, you can rebase directly to Blue95:
 
@@ -33,8 +33,8 @@ If you are currently using another atomic desktop such as [Bazzite](https://bazz
 It is recommended to create a new user after rebasing.
 
 # Live ISO
-<a href="../images/installer.png">
-![installer](./images/installer.png)
+<a href="../img/installer.png">
+![installer](./img/installer.png)
 </a>
 
 /// warn
