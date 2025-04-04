@@ -6,7 +6,7 @@ The component responsible for this configuration management is called `winblues-
 
 ## Toggling `winblues-chezmoi`
 
-By default, `winblues-chezmoi` runs once at initialization and then disables itself. If you want continuous updates and tweaks based on changes upstream to either Chicago95 or Xfce, you can enable the service like so:
+By default, `winblues-chezmoi` runs once at initialization and then disables itself. If you want continuous updates and tweaks based on changes upstream to either <img src="../images/emblems/chicago95.png" style="height: 1em; vertical-align: middle;"> [Chicago95](https://github.com/grassmunk/Chicago95) or <img src="../images/emblems/xfce.png" style="height: 1em; vertical-align: middle;"> [Xfce](https://www.xfce.org), you can enable the service like so:
 
 ```bash
 systemctl --user unmask winblues-chezmoi.service
@@ -23,7 +23,7 @@ To disable `winblues-chezmoi` after manually enabling it, run the following:
 systemctl --user mask winblues-chezmoi.service
 ```
 
-## Excluding Files
+## Configuration
 
 /// important
     open: True
@@ -31,7 +31,9 @@ Some of the following configuration settings have not been fully implemented. If
 ///
 
 Note that although `winblues-chezmoi` is configurable to exclude updating certain dotfiles and `xfconf` properties, this is meant to be
-used sparingly. If you want more control over the appearance of the desktop environment, it is suggested to either disable the `winblues-chezmoi` service and manually manage your own dotfiles or use the base [winblues/vauxite](https://github.com/winblues/vauxite) image instead of Blue95.
+used sparingly. If you want more control over the appearance of the desktop environment, it is suggested to either disable the `winblues-chezmoi` service and manually manage your own dotfiles or use the base <img src="../images/emblems/winblues.png" style="height: 1em; vertical-align: middle;"> [winblues/vauxite](https://github.com/winblues/vauxite) image instead of Blue95.
+
+## Excluding Files
 
 The Xfce desktop environment stores its configuration files in the user's home directory under `~/.config/xfce4`, which are managed by `winblues-chezmoi`. To configure `winblues-chezmoi` to not manage certain files, create a file called `~/.config/winblues/chezmoiignore`
 
