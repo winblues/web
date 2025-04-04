@@ -8,7 +8,7 @@ For command-line applications, <img src="../img/emblems/homebrew.png" style="hei
 
 ## Aesthetic
 
-Blue95 aims to provide an aesthetic rooted in a bygone era of computing that is intended to remind its users of design elements from the 1990s.
+Blue95 aims to provide an aesthetic rooted in a bygone era of computing that is intended to remind its users of design elements from the 1990s. Most of the heavy lifting is taken care of by <img src="../img/emblems/chicago95.png" style="height: 1em; vertical-align: middle;"> [Chicago95](https://github.com/grassmunk/Chicago95) and any changes to the visual elements of Blue95 should be upstreamed to that project where applicable.
 
 
 However, Blue95 is not aiming to be a faithful reproduction of any particular decades-old operating system. Pixel perfect recreation of GUI elements is not within the scope of this project.
