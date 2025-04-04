@@ -6,7 +6,7 @@ The component responsible for this configuration management is called `winblues-
 
 ## Toggling `winblues-chezmoi`
 
-By default, `winblues-chezmoi` runs once at initialization and then disables itself. If you want continuous updates and tweaks based on changes upstream to either <img src="../img/emblems/chicago95.png" style="height: 1em; vertical-align: middle;"> [Chicago95](https://github.com/grassmunk/Chicago95) or <img src="../images/emblems/xfce.png" style="height: 1em; vertical-align: middle;"> [Xfce](https://www.xfce.org), you can enable the service like so:
+By default, `winblues-chezmoi` runs once at initialization and then disables itself. If you want continuous updates and tweaks based on changes upstream to either <img src="../img/emblems/chicago95.png" style="height: 1em; vertical-align: middle;"> [Chicago95](https://github.com/grassmunk/Chicago95) or <img src="../img/emblems/xfce.png" style="height: 1em; vertical-align: middle;"> [Xfce](https://www.xfce.org), you can enable the service like so:
 
 ```bash
 systemctl --user unmask winblues-chezmoi.service
