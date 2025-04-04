@@ -1,10 +1,10 @@
 ## Core System
 
-Blue95 is based on the solid foundation of [Fedora Xfce](https://fedoraproject.org/spins/xfce), packaged as an OCI image on [Quay](https://quay.io/repository/fedora-ostree-desktops/xfce-atomic?tab=info).
-We heavily utilize tweaks from [Universal Blue](https://github.com/ublue-os) (e.g. codecs, automatic updates, etc) to produce a more usable out-of-the box experience.
+Blue95 is based on the solid foundation of <img src="../img/emblems/fedora.png" style="height: 1em; vertical-align: middle;">  [Fedora Xfce](https://fedoraproject.org/spins/xfce).
+We pull in tweaks from <img src="../img/emblems/ublue-os.png" style="height: 1em; vertical-align: middle;"> [Universal Blue](https://github.com/ublue-os) (e.g. codecs, automatic updates, etc) to produce a more usable out-of-the box experience.
 
-Following the lead of Universal Blue, Blue95 embraces [Flathub](https://flathub.org) as the universal Linux App Store for GUI applications.
-For command-line applications, [Homebrew](https://brew.sh) is installed by default. Updates for Flatpaks and Homebrew applications are automatically enabled.
+Following the lead of Universal Blue, Blue95 embraces <img src="../img/emblems/flathub.png" style="height: 1em; vertical-align: middle;"> [Flathub](https://flathub.org) as the universal Linux App Store for GUI applications.
+For command-line applications, <img src="../img/emblems/homebrew.png" style="height: 1em; vertical-align: middle;"> [Homebrew](https://brew.sh) is installed by default. Updates for Flatpaks and Homebrew applications are automatically enabled.
 
 ## Aesthetic
 
