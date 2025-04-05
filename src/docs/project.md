@@ -17,7 +17,7 @@ Whenever usability and exact replication are at odds, usability and accessibilit
 # Batteries Included
 
 Although Blue95 is not a <img src="../img/emblems/ublue-os.png" style="height: 1em; vertical-align: middle;"> [Universal Blue](https://github.com/ublue-os) project,
-we strive to follow the same philosophy. We take inspiration from the developer experience images from Aurora and Bluefin.
+we strive to follow the same philosophy. We take inspiration from the developer experience images from <img src="../img/emblems/aurora.svg" style="height: 1em; vertical-align: middle;"> [Aurora](https://getaurora.dev) and <img src="../img/emblems/bluefin.png" style="height: 1em; vertical-align: middle;"> [Bluefin](https://projectbluefin.io).
 
 For Xfce enthusiasts, this "batteries included" approach may feel at odds with the lightweight reputation that Xfce has garnered over the years.
-If Blue95's defaults feel a bit bloated for you, we encourage you to consider <img src="../img/emblems/winblues.png" style="height: 1em; vertical-align: middle;"> [winblues/vauxite](https://github.com/winblues/vauxite) which offers the `vauxite-minimal` image.
+If Blue95's defaults feel a bit bloated for you, we encourage you to consider <img src="../img/emblems/winblues.png" style="height: 1em; vertical-align: middle;"> [winblues/vauxite](https://github.com/winblues/vauxite) which offers the lightweight <img src="../img/emblems/xfce.png" style="height: 1em; vertical-align: middle;"> [Xfce](https://www.xfce.org) image [`vauxite-minimal`](https://github.com/winblues/vauxite/pkgs/container/vauxite-minimal).
