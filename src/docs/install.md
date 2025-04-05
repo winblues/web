@@ -16,7 +16,7 @@ sudo bootc switch ghcr.io/winblues/blue95:latest
 ```
 
 # From Other Atomic Desktops
-If you are currently using another atomic desktop such as [Bazzite](https://bazzite.gg) or [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue), you can rebase to Blue95.
+If you are currently using another Fedora Atomic Desktop such as <img src="../img/emblems/bazzite.svg" style="height: 1em; vertical-align: middle;"> [Bazzite](https://bazzite.gg) or <img src="../img/emblems/silverblue.png" style="height: 1em; vertical-align: middle;"> [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue), you can rebase to Blue95.
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
 
