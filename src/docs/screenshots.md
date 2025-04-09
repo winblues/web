@@ -1,7 +1,7 @@
 ## Main Desktop
 
-<a href="https://blue95.neocities.org/screenshot-orig.png">
-![](https://blue95.neocities.org/screenshot-orig.png)
+<a href="../img/showcase/clouds-wallpaper.png">
+![showcase/clouds-wallpaper](./img/showcase/clouds-wallpaper.png)
 </a>
 
 ## Mail Client
