@@ -48,6 +48,23 @@ Audacious has full support for custom Winamp skins, such as those found in the I
 If Audacious with a Winamp skin is too small, try enabling Double Size with Ctrl+D.
 ///
 
+# AOL Instant Messenger
+
+<a href="../img/aim.png">
+![aim](./img/aim.png)
+</a>
+
+/// info
+    open: True
+Our plan is to include a `ujust install-aim` recipe to automate a lot of this, but here
+are the manual steps for now.
+///
+
+1. Install [Bottles](https://flathub.org/apps/com.usebottles.bottles), either through the Software Store or with: `flatpak install flathub com.usebottles.bottles`.
+2. Create a new Bottle called "AIM" and select "Application."
+3. Sign up for an account on [nina.chat](https://nina.chat).
+4. Follow the rest of Nina's [Getting Started](https://nina.chat/connect/aim/) guide where you will download, install and patch the AIM client.
+
 # Liferea
 
 <a href="../img/liferea.png">
@@ -63,4 +80,6 @@ Out of the box, the RSS reader application [Liferea](https://github.com/lwindolf
 </a>
 
 The lightweight IDE [Geany](https://www.geany.org) has the correct theming out of the box.
+
+
 

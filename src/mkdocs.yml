@@ -34,6 +34,9 @@ markdown_extensions:
         - name: tip
           class: terminal-alert
           title: Tip
+        - name: info
+          class: terminal-alert
+          title: Info
         - name: warn
           class: 'terminal-alert terminal-alert-error'
           title: Warning
