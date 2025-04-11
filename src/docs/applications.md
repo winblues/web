@@ -65,6 +65,18 @@ are the manual steps for now.
 3. Sign up for an account on [nina.chat](https://nina.chat).
 4. Follow the rest of Nina's [Getting Started](https://nina.chat/connect/aim/) guide where you will download, install and patch the AIM client.
 
+# Obsidian
+
+
+<a href="../img/obsidian.png">
+![obsidian](./img/obsidian.png)
+</a>
+
+The popular markdown note taking application [Obsidian](https://obsidian.md) has support for custom themes.
+
+Follow the [Themes Setup Guide](https://help.obsidian.md/themes) to enable themes and install the "Retro Windows" theme.
+Additionally, change the Window frame style setting to "Native frame."
+
 # Liferea
 
 <a href="../img/liferea.png">
