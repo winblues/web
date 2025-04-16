@@ -77,6 +77,16 @@ The popular markdown note taking application [Obsidian](https://obsidian.md) has
 Follow the [Themes Setup Guide](https://help.obsidian.md/themes) to enable themes and install the "Retro Windows" theme.
 Additionally, change the Window frame style setting to "Native frame."
 
+# MenuLibre
+
+<a href="../img/menulibre.png">
+![menulibre](./img/menulibre.png)
+</a>
+
+[MenuLibre](https://github.com/bluesabre/menulibre) is a tool used to edit and create FreeDesktop.org Desktop Entries
+for the Start Menu and Desktop.
+
+
 # Liferea
 
 <a href="../img/liferea.png">
