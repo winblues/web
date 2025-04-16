@@ -31,6 +31,13 @@ Launch LibreOffice Writer and open the Extensions menu by going to Tools > Exten
 
 Once installed, open the Tools > Options menu, navigate to LibreOffice > View, and under Icon Theme, select Chicago95.
 
+# Flatpost
+
+<a href="../img/flatpost.png">
+![obsidian](./img/flatpost.png)
+</a>
+[Flatpost](https://github.com/GloriousEggroll/flatpost) is the default Software Store and Flatpak browser in Blue95. It is desktop environment agnostic and built using Gtk which allows it to be themed with Chicago95.
+
 # Audacious
 
 <figure markdown>
@@ -65,8 +72,15 @@ are the manual steps for now.
 3. Sign up for an account on [nina.chat](https://nina.chat).
 4. Follow the rest of Nina's [Getting Started](https://nina.chat/connect/aim/) guide where you will download, install and patch the AIM client.
 
-# Obsidian
+# Space Cadet Pinball
 
+<a href="../img/pinball.png">
+![obsidian](./img/pinball.png)
+</a>
+
+The [Space Cadet Pinball](https://flathub.org/apps/com.github.k4zmu2a.spacecadetpinball) game is bundled as a Flatpak in Blue95.
+
+# Obsidian
 
 <a href="../img/obsidian.png">
 ![obsidian](./img/obsidian.png)
