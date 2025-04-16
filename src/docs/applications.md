@@ -55,6 +55,14 @@ Audacious has full support for custom Winamp skins, such as those found in the I
 If Audacious with a Winamp skin is too small, try enabling Double Size with Ctrl+D.
 ///
 
+# Paint
+
+<a href="../img/paint.png">
+![aim](./img/paint.png)
+</a>
+
+Blue95 includes <img src="../img/emblems/winblues.png" style="height: 1em; vertical-align: middle;"> [winblues/paint](https://github.com/winblues/paint), which is a simple Gtk GUI displaying the webpage [jspaint.app](https://jspaint.app).
+
 # AOL Instant Messenger
 
 <a href="../img/aim.png">
