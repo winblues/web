@@ -1,0 +1,18 @@
+build:
+  #!/bin/bash
+  set -exuo pipefail
+
+  podman build -t winblues-site .
+  rm -rf public
+  mkdir -p public
+  podman run --rm winblues-site tar -C /src/public -cf - . | tar -C public -xf -
+
+serve:
+  podman run --rm -it \
+    -p 1313:1313 \
+    -v "$(pwd)":/src:Z \
+    -w /src \
+    hugomods/hugo:reg-exts-0.146.5 \
+    server --bind=0.0.0.0 --baseURL=http://localhost:1313
+
+

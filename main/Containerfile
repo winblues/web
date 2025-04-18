@@ -1,0 +1,4 @@
+FROM hugomods/hugo:reg-exts-0.146.5
+WORKDIR /src
+COPY . /src
+RUN hugo

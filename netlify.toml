@@ -1,3 +1,6 @@
 [build]
-  command = "cd src && mkdocs build -d ../static/95/docs"
+  command = "bash build.sh"
   publish = "static"
+
+[build.environment]
+  HUGO_VERSION = "0.146.5"
