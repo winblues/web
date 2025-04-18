@@ -11,6 +11,7 @@ nav:
     - User Guide:
       - Applications: 'applications.md'
       - Xfce Settings: 'user-configs.md'
+      - 'Chicago 95 Plus!': 'plus.md'
 theme:
   name: terminal
   palette: dark
