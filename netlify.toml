@@ -1,3 +1,6 @@
 [build]
   command = "bash build.sh"
   publish = "static"
+
+[build.environment]
+  HUGO_VERSION = "0.124.1"
