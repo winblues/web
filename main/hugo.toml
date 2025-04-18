@@ -1,0 +1,15 @@
+baseURL = 'https://blues.win/'
+languageCode = 'en-us'
+title = 'Winblues'
+theme = 're-terminal'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+centerTheme = true
+
+[params.Logo]
+logoText = 'Winblues'
