@@ -1,4 +1,4 @@
-baseURL = 'https://blues.win/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Winblues'
 theme = 're-terminal'
