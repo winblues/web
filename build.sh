@@ -1,12 +1,10 @@
 #!/bin/bash
 set -e
 
-if [ -n "$DEPLOY_PRIME_URL" ]; then
-  # Netlify preview/deploy URL
-  BASE_URL="$DEPLOY_PRIME_URL"
-else
-  # Production URL
+if [ "$CONTEXT" = "production" ]; then
   BASE_URL="https://blues.win"
+else
+  BASE_URL="$DEPLOY_PRIME_URL"
 fi
 
 echo "Building MkDocs..."
