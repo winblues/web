@@ -17,7 +17,7 @@ theme = 're-terminal'
   [[languages.en.menu.main]]
     identifier = "blue95"
     name = "Blue95"
-    url = "/95/docs"
+    url = "/95"
   [[languages.en.menu.main]]
     identifier = "github"
     name = "GitHub"
