@@ -16,9 +16,9 @@ This post will go over some of the changes and improvements that Blue95 has made
 **Blue95 Topanga** is now based on Fedora 42, which brings several changes along with it, including:
 - The latest version of [Xfce 4.20](https://xfce.org/about/news/?post=1734220800). Partial Wayland support is experimental but functional. See the [Xfce 4.20 Tour](https://www.xfce.org/about/tour420) for more information.
 - Fedora Atomic bootc images now use [composefs](https://fedoraproject.org/wiki/Changes/ComposefsAtomicDesktops) for the default `/` filesystem. This should not have a user-visible impact, but it makes the root filesystem more resistant to accidental modifications.
-- A new kernel and a bunch of other changes from [Fedora 42](https://blues.win/95/docs/install).
+- A new kernel and a bunch of other changes from [Fedora 42](https://fedoramagazine.org/announcing-fedora-linux-42).
 
-### Applications 
+#### Applications 
 <div style="display: flex; justify-content: space-between; gap: 10px; text-align: center;">
   <figure style="width: 48%;">
     <a href="/images/paint.png"><img src="/images/paint.png" alt="Image 1" style="width: 100%; height: 260px; object-fit: cover;"></a>
@@ -42,13 +42,13 @@ This post will go over some of the changes and improvements that Blue95 has made
 
 - [LibreOffice](https://blues.win/95/docs/applications/#libreoffice-writer) is now provided as a Flatpak, with instructions on how to install the correct icons.
 
-### Live CD
+#### Live CD
 
 ![installer](/images/installer.png)
 
 We are now providing a Live ISO where you can boot into a Blue95 live environment. Test it out without needing to install anything. Find more information in the <a href="https://blues.win/95/docs/">Documentation</a>.
 
-## Install Now
+#### Install Now
 
 If you are currently using **Blue95 Ross**, then you should automatically be upgraded on your next reboot. If you are using another Fedora Atomic image and want to try it out, you can rebase with
 
