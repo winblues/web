@@ -8,12 +8,27 @@ theme = 're-terminal'
     [markup.goldmark.renderer]
       unsafe = true
 
+
+[languages.en.menu]
+#  [[languages.en.menu.main]]
+#    identifier = "images"
+#    name = "Projects"
+#    url = "/projects"
+  [[languages.en.menu.main]]
+    identifier = "blue95"
+    name = "Blue95"
+    url = "/95/docs"
+  [[languages.en.menu.main]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/winblues"
+
 [params]
 centerTheme = true
 themeColor = "paper"
 favicon = "favicon.png"
 #copyright = "[foobar](goo.as)"
-
+showMenuItems = 5
 
 [params.Logo]
 logoText = 'Winblues'
