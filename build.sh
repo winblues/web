@@ -9,7 +9,7 @@ fi
 
 echo "Building MkDocs..."
 cd src
-mkdocs build -d ../static/95/docs
+mkdocs build -d ../static/95
 cd ..
 
 if [ ! -d main/themes/re-terminal ]; then
