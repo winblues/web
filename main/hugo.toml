@@ -11,6 +11,8 @@ theme = 're-terminal'
 [params]
 centerTheme = true
 themeColor = "paper"
+favicon = "favicon.png"
+#copyright = "[foobar](goo.as)"
 
 
 [params.Logo]

@@ -8,11 +8,16 @@ build:
   podman run --rm winblues-site tar -C /src/public -cf - . | tar -C public -xf -
 
 serve:
+  hugo serve -p 1314 --bind=0.0.0.0 --baseURL=http://localhost:1314
+
+
+
+serve-podman-doesnt-work:
   podman run --rm -it \
-    -p 1313:1313 \
+    -p 1314:1314 \
     -v "$(pwd)":/src:Z \
     -w /src \
     hugomods/hugo:reg-exts-0.146.5 \
-    server --bind=0.0.0.0 --baseURL=http://localhost:1313
+    server --bind=0.0.0.0 --baseURL=http://localhost:1314
 
 
