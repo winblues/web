@@ -10,6 +10,8 @@ theme = 're-terminal'
 
 [params]
 centerTheme = true
+themeColor = "paper"
+
 
 [params.Logo]
 logoText = 'Winblues'
