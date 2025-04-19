@@ -9,10 +9,8 @@ fi
 
 echo "Building MkDocs..."
 cd src
-mkdocs build -d ../static/95
-cd ../static/95
-ln -s . docs
-cd ../..
+mkdocs build -d ../static/95/docs
+cd ..
 
 if [ ! -d main/themes/re-terminal ]; then
   git clone --depth 1 https://github.com/mirus-ua/hugo-theme-re-terminal.git main/themes/re-terminal
