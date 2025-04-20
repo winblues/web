@@ -27,7 +27,7 @@ theme = 're-terminal'
 centerTheme = true
 themeColor = "paper"
 favicon = "favicon.png"
-#copyright = "[foobar](goo.as)"
+copyright = "© Winblues 2025 :: Powered by Hugo"
 showMenuItems = 5
 
 [params.Logo]
