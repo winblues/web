@@ -78,7 +78,7 @@ Popular bootc-based projects like [Project Bluefin](https://projectbluefin.io) a
 
 Maybe the imprecision of the term “Linux distribution” is most evident when arguments arise over what is and isn’t a distro. It has always been problematic to define a distribution as simply a curated collection of software plus a Linux kernel -— but that definition is now especially lacking, as it could just as easily describe any Containerfile for a bootable container. Ultimately, “I know it when I see it” may be the best we can do when deciding whether a project deserves the label Linux distribution or not.
 
-Finally, to address the original question about the necessity of spinning up a new distro just for a theme: creating a bootable container with a consistent visual design and curated set of applications can bring a bit of **joy and levity**. At this moment, my laptop is booted from a container that I have created myself and I can recognize that the operating system being used to draft these words is the product of my own artistic and creative expression -- built on the work of countless other human beings. And that brings me joy.
+Finally, to address the original question about the necessity of spinning up a new distro just for a theme: creating a bootable container with a consistent visual design and curated set of applications can bring a bit of **joy and levity**. At this moment, my laptop is booted from a container that I have created myself. The operating system being used to draft these words is the product of my own artistic and creative expression -- built on the work of countless other human beings. And that brings me joy.
 
 ---
 
