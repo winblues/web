@@ -31,11 +31,14 @@ Once defined, you can build your container locally and instruct the current `boo
 to use the new image.
 
 ```bash
-sudo podman build -f Containerfile -t my-fedora .
-sudo bootc switch localhost/my-fedora:latest
+sudo podman build -f Containerfile -t my-fedora
+sudo bootc switch --transport containers-storage localhost/my-fedora:latest
+
 ```
 
-With Fedora Atomic systems, `/usr` is mounted read-only and as of Fedora 42, it is mounted using composefs. Since podman also uses composefs to store container layers, this allows deduplication of files between the host's actual operating system (stored in `/usr`) and any containers that are built or executed on the system.
+After rebooting, the system will boot into a new deployment defined by the image.
+
+With Fedora Atomic systems, `/usr` is mounted read-only using composefs. Since podman also uses composefs to store container layers, this allows deduplication of files between the host's actual operating system (stored in `/usr`) and any containers that are built or executed on the system.
 
 Because your operating system is defined by an OCI container, it is incredibly easy to revert to a previous tag of that container. For me, I can easily create a throwaway container where I test out ideas for an improvement, reboot into the new deployment defined by that container and test out the new changes on bare-metal. I can roll back to the previous container or create a new container with additional changes.
 
@@ -44,7 +47,7 @@ One downside is that this reboot-heavy workflow can obviously cause some frictio
 Of course, there are other ways to achieve similar results without using a bootable container model.
 - You can write shell scripts or Ansible playbooks and hope that they accurately capture changes to the system that are being made so that they can be undone in a reliable manner. Ignore configuration drift that occurs as software gets updated.
 - With [systemd-sysext(8)](https://www.freedesktop.org/software/systemd/man/latest/systemd-sysext.html), you can create a simple squashfs image of the root filesystem containing your theming changes for `/usr` and layer it on to the host filesystem. How these images are created, maintained, deployed and updated isn't fully fleshed out.
-- One can inscribe their custom theming as runes in an arcane and inscrutable functional language known only to the elders as N̸̘̏͑̕͝ỉ̶̠̏͝į̸̈́̂x̸͙̑̅̒.
+- One can inscribe their custom theming as runes in an arcane and inscrutable functional language known only to the elders as N̸̘̏͑̕͝į̸̈́̂x̸͙̑̅̒.
 
 In my opinion, none of the alternatives provide the same level of flexibility as writing a Containerfile nor provide
 the same level of safety and reliability by making it extremely difficult to bork your `/usr` directory. If the `/usr` directory somehow gets borked anyway, rolling back to the previously deployed container is just a reboot away.
@@ -53,12 +56,12 @@ the same level of safety and reliability by making it extremely difficult to bor
 
 <div style="display: flex; justify-content: space-between; gap: 10px; text-align: center;">
   <figure style="width: 48%;">
-    <a href="/images/blue95.png"><img src="/images/blue95.png" alt="Image 1" style="width: 100%; height: 260px; object-fit: cover;"></a>
-    <figcaption><a href="https://github.com/winblues/blue95">Blue95</a></figcaption>
+    <a href="/images/bluexp.png"><img src="/images/bluexp.png" alt="Image 2" style="width: 100%; object-fit: cover;"></a>
+    <figcaption><a href="https://github.com/winblues/bluexp">BlueXP</a></figcaption>
   </figure>
   <figure style="width: 48%;">
-    <a href="/images/plus.png"><img src="/images/plus.png" alt="Image 2" style="width: 100%; height: 260px; object-fit: cover;"></a>
-    <figcaption><a href="https://blues.win/95/docs/plus/">BlueXP</a></figcaption>
+    <a href="/images/blue9.png"><img src="/images/blue9.png" alt="Image 1" style="width: 100%; height: 234px; object-fit: cover;"></a>
+    <figcaption><a href="https://github.com/winblues/blue9">Blue9</a></figcaption>
   </figure>
 </div>
 
@@ -67,10 +70,10 @@ A few weeks ago, an OCI image based on Fedora Xfce Atomic that I made called [Bl
 > Is it really necessary to spin up an entirely new distro for an XFCE+GTK theme?
 
 
-The original poster made me question the nature of the project that I made; is it a distro? In the age of `bootc`, the distinction between what is a Linux distribution and what is a Containerfile are, in my opinion, murky at best. The barrier of entry of creating an OCI image and creating a Linux distribution differs by orders of magnitude.
+The original poster made me question the nature of the project that I made; is it a distro? In the age of `bootc`, the distinction between what is a Linux distribution and what is a Containerfile are, in my opinion, murky at best. The barrier of entry for creating an OCI image and creating a Linux distribution differs by orders of magnitude.
 
-[Blue95](https://blues.win/95) is a set of scripts and YAML files that are smushed together to make a Containerfile that is built using GitHub Actions and pushed to GitHub's container registry. What part of this process elevates the project to the status of a Linux distribution? What set of `RUN` commands in the Containerfile take the project from being merely an OCI image to a full blown Linux distribution?
+[Blue95](https://blues.win/95) is a set of scripts and YAML files that are smashed together to make a Containerfile that is built using GitHub Actions and pushed to GitHub's container registry. What part of this process elevates the project to the status of a Linux distribution? What set of `RUN` commands in the Containerfile take the project from being merely an OCI image to a full blown Linux distribution?
 
-Popular `bootc`-based projects like [Project Bluefin](https://projectbluefin.io) and [Bazzite](https://bazzite.gg) are often labeled as Linux distributions, often to the chagrin of their creators. If you've ever used Bazzite, it does indeed feel like its own Linux distribution; it is quite distinct from its base of Fedora Workstation or Fedora KDE Plasma Desktop. Maybe the imprecision of the term "Linux distribution" is on full display when arguments break out about what is and is not a distro. "I know it when I see it" may be as good as it gets when trying to label projects as worthy of the label Linux distribution or not.
+Popular `bootc`-based projects like [Project Bluefin](https://projectbluefin.io) and [Bazzite](https://bazzite.gg) are often labeled as Linux distributions, much to the consternation of their creators. But if you've ever used Bazzite, it does indeed feel like its own Linux distribution; it is quite distinct from its base of [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/) or [Fedora Kinoite](https://fedoraproject.org/atomic-desktops/kinoite/). Maybe the imprecision of the term "Linux distribution" is on full display when arguments break out about what is and is not a distro. "I know it when I see it" may be the best we can do when trying to categorize projects as worthy of the label Linux distribution or not.
 
 Finally, to address the original question about the necessity of spinning up a new distro just for a theme: creating bootable containers with pre-loaded theming and applications brings joy to some. I can run a bootable container image on bare-metal and recognize that the operating system that is being used to draft these words is the product of my own artistic and creative expression, built on the work of countless other human beings. And that brings me joy.
