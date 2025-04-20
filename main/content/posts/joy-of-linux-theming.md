@@ -1,7 +1,7 @@
 ---
 title: "The Joy of Linux Theming in the Age of Bootable Containers"
 author: "@ledif"
-date: 2025-04-19T12:00:00Z
+date: 2025-04-20T12:00:00Z
 cover: "/images/glorpception.png"
 coverCaption: "What is a Linux distribution anyway?"
 draft: false
