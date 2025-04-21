@@ -16,8 +16,8 @@ The default mail application is [Epyrus](http://www.epyrus.org). The [Moonscape]
 
 # LibreOffice Writer
 
-<a href="https://blues.win/95/screenshot-libreoffice.png">
-![LibreOffice Chicago95 Icon Set](https://blues.win/95/screenshot-libreoffice.png)
+<a href="../img/libreoffice.png">
+![LibreOffice Chicago95 Icon Set](../img/libreoffice.png)
 </a>
 The Chicago95 icon set for LibreOffice Writer is available in Blue95, but it must be installed manually.
 
