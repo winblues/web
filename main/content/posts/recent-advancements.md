@@ -1,10 +1,10 @@
 ---
-title: "Recent Advancements in Blue95"
+title: "Recent Advances in Blue95"
 date: 2025-04-21T00:00:00Z
 draft: false
 ---
 
-This article presents a scattering of recent additions and changes to **Blue95 Topanga** over the past few months. Each individual change is arguably not worthy of an entire article on its own, so here's they are in no particular order.
+This article presents a scattering of recent additions and changes to **Blue95 Topanga** over the past few months. Each individual change is arguably not worthy of an entire article on its own, so here they are in no particular order.
 
 ## PowerPoint Templates
 
