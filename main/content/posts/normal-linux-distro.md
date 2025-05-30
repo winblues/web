@@ -28,7 +28,7 @@ So, is Bazzite a “normal” Linux distro? Kind of, yes. It's just Linux. But i
 
 In my mind, the goals of `bootc` and [NixOS](https://nixos.org/) are not too dissimilar: declarative builds and atomic deployments of Linux systems. I run a few NixOS machines in my homelab and I love Nix for what it brings to the server world. But if I were setting up a desktop computer for a friend or my parents I certainly would not choose NixOS. I'd choose Bazzite or Fedora Silverblue or any of the many `bootc` images out there.
 
-Fans of NixOS can rightly point out that Nix gives you unmatched power and control. But it also requires you to learn the intricacies of a domain-specific functional programming language. Not to say that the knowledge you gain in mastering Nix is not valuable, but its value is largely self-contained within the Nix ecosystem.
+Fans of NixOS can rightly point out that Nix gives you unmatched power and control. But it also requires you to learn the intricacies of a domain-specific functional programming language. Not to say that the knowledge you gain in mastering Nix is not valuable, but much of its value is self-contained within the Nix ecosystem.
 
 In contrast, bootc-based systems build on a different foundation: OCI containers. If you understand Dockerfiles or podman, you will kind of already get it. And what you learn by creating and maintaining a bootc image applies directly to containerized infrastructure elsewhere.
 
