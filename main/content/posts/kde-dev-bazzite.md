@@ -1,18 +1,19 @@
 ---
 title: "KDE Development on Bazzite"
 date: 2025-09-19T12:00:00Z
+author: "Adam Fidel (ledif)"
 draft: false
 ---
 
 <a href="/images/bazzite-kde-dev.webp"><img src="/images/bazzite-kde-dev.webp" /></a>
 
-[Bazzite](https://bazzite.gg), a gaming-focused Linux operating system, has garnered a reputation of being a good choice for playing video games but too restrictive for actual development work due to its read-only `/usr` partition and its weird package management quirks.
+[Bazzite](https://bazzite.gg), a gaming-focused Linux operating system, has garnered a reputation for being a good choice for playing video games but too restrictive for actual development work due to its read-only `/usr` partition and its weird package management quirks.
 
-Often, people get tripped up by attempting to install certain toolchains for development work, realizing that installing packages on top of the bootable container image requires a reboot and eventually conclude that this friction is an indication of the operating system not being suitable for serious software development.
+Often, people get tripped up by attempting to install certain toolchains for development work, realizing that installing packages on top of the bootable container image requires a reboot, and eventually conclude that this friction is an indication that the operating system is not suitable for serious software development.
 
-Here, I will argue that the restrictions imposed by its so-called "immutable" nature are in actuality useful safeguards that help isolate your day-to-day desktop activities from your development work. By providing a strong emphasis on containerization, you are free to install, explore, develop and destroy to your heart's content within the confines of a sandboxed environment without worry. You are free to hack away without the sneaking worry that by somehow upgrading the system's `clang++` to a version required for your development work, you will inadvertently break the ABI of some shared-library that your web browser depended on and now you cannot navigate to double-u double-u double-u dot reddit dot com to doomscroll for hours on end.
+Here, I will argue that the restrictions imposed by its so-called "immutable" nature are in actuality useful safeguards that help isolate your day-to-day desktop activities from your development work. By providing a strong emphasis on containerization, you are free to install, explore, develop and destroy to your heart's content within the confines of a sandboxed environment without worry. You are free to hack away without the sneaking worry that by somehow upgrading the system's `clang++` to a version required for your development work, you will inadvertently break the ABI of some shared-library that your web browser depended on, and now you cannot navigate to double-u double-u double-u dot reddit dot com to doomscroll for hours on end.
 
-But aren't containers heavily sandboxed? What if I want to develop a core component of the system such as the desktop environment itself?
+But aren't containers heavily sandboxed? What if I want to develop a core component of the system, such as the desktop environment itself?
 
 This post is written in praise of a tool that makes such an endeavor possible: Distrobox.
 
@@ -22,7 +23,7 @@ The magic that makes containerization a viable strategy for KDE development is [
 
 > Distrobox uses `podman`, `docker` or `lilipod` to create containers using the Linux distribution of your choice. The created container will be tightly integrated with the host, allowing sharing of the `$HOME` directory of the user, external storage, external USB devices and graphical apps (X11/Wayland), and audio.
 
-Bazzite is based on Fedora, so our plan is to create a Fedora distrobox. In the container, we will install all of our development tools and then build KDE from source. The resulting artifacts will be available outside of the container back on the host system.
+Bazzite is based on Fedora, so we plan to create a Fedora distrobox. In the container, we will install all of our development tools and then build KDE from source. The resulting artifacts will be available outside of the container back on the host system.
 
 To reduce some friction, I've created a Fedora-based [Docker image](https://github.com/ledif/ublue-kde-dev/blob/main/Containerfile) that contains all of the necessary KDE development packages. It is available via the [GitHub Container Registry](https://github.com/ledif/ublue-kde-dev/pkgs/container/ublue-kde-dev).
 
@@ -90,7 +91,7 @@ We first need to tell SDDM about it, which means adding a session to `/usr/share
 lrwxrwxrwx. 6 root root 15 Mar  5  2024 /usr/local -> ../var/usrlocal
 ```
 
-`/usr/local` is actually a symbolic link to the writeable `/var` directory! Since SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually just add our session there with little fuss.
+`/usr/local` is actually a symbolic link to the writeable `/var` directory! Since SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually add our session there with little fuss.
 
 ```bash
 cat << EOF > /tmp/plasmawayland-dev6.desktop
