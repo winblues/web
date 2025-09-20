@@ -1,0 +1,108 @@
+---
+title: "KDE Development on Bazzite"
+date: 2025-09-19T12:00:00Z
+draft: false
+---
+
+[Bazzite](https://bazzite.gg), a gaming-focused Linux operating system, has garnered a reputation of being a good choice for playing video games but too restrictive for actual development work due to its read-only `/usr` partition and its weird package management quirks. Often, people get tripped up by attempting to install certain toolchains for development work, realizing that installing packages on top of the bootable container image requires a reboot and eventually conclude that this friction is an indication of the operating system not being suitable for serious software development.
+
+Here, I will argue that the restrictions imposed by its so-called "immutable" nature are in actuality useful guardrails that help isolate your day-to-day desktop activities from your development work. By providing a strong emphasis on containerization, you are free to install, explore, develop and destroy to your heart's content within the confines of a sandboxed environment without worry. You are free to hack away without the sneaking worry that by somehow upgrading the system's `clang++` to a version required for your development work, you will inadvertently break the ABI of some shared-library that your web browser depended on and now you cannot navigate to double-u double-u double-u dot reddit dot com to doomscroll for hours on end.
+
+But aren't containers heavily sandboxed? What if I want to develop a core component of the system such as the desktop environment itself?
+
+This post is written in praise of a tool that makes such an endeavor possible: Distrobox.
+
+
+# Setting Up KDE Builder
+
+The magic that makes containerization a viable strategy for KDE development is [Distrobox](https://github.com/89luca89/distrobox). In their own words:
+
+> Distrobox uses `podman`, `docker` or `lilipod` to create containers using the Linux distribution of your choice. The created container will be tightly integrated with the host, allowing sharing of the `$HOME` directory of the user, external storage, external USB devices and graphical apps (X11/Wayland), and audio.
+
+Since Bazzite is based on Fedora, the plan is to create a Fedora distrobox that we will install all of our development tools into where we can then build KDE from source and share the resulting artifacts back to the host system. To reduce some friction, I've created a Fedora-based Docker image that contains all of the necessary KDE development packages and it is available via the [GitHub Container Registry](https://github.com/ledif/ublue-kde-dev/pkgs/container/ublue-kde-dev).
+
+```bash
+sudo mkdir -p /var/local/kde-dev/{home,kde}
+sudo chown $(id -u):$(id -u) /var/local/kde-dev/{home,kde}
+
+mkdir -p /var/local/kde-dev/home/.config
+cp ./kde-builder.yaml /var/local/kde-dev/home/.config
+
+distrobox create \
+  --name kde-dev \
+  --home /var/local/kde-dev/home \
+  --init \
+  --additional-packages "systemd" \
+  --pull \
+  --image ghcr.io/ledif/ublue-kde-dev:latest
+
+podman start kde-dev
+```
+
+In the above configuration, we have a directory tree in `/var/local/kde-dev` for the source files, the intermediate build files and the final `/usr` directory tree representing the entire desktop environment. We also create a separate home directory for the container, just so that our Bash history and profiles are not intermixed with those on the host.
+
+```
+/var/local/kde-dev
+├── home
+│   ├── .config
+│   │   ├── kde-builder.yaml
+│   ├── .local
+│   │   ├── share
+│   │   └── state
+└── kde
+    ├── build
+    ├── log
+    ├── src
+    └── usr
+        ├── bin
+        ├── etc
+        ├── include
+        ├── lib
+        ├── lib64
+        ├── libexec
+        ├── mkspecs
+        └── share
+```
+
+After this is set up, you can then enter into the container and build KDE Plasma.
+
+```bash
+distrobox enter kde-dev
+kde-builder workspace
+```
+
+It will probably take a long time to compile, so a nice walk around the neighborhood might be in order.
+
+## Running Your Own Plasma
+
+After the entire project finishes building, all of the artifacts are now available on the host in `/var/local/kde-dev/kde/usr`, so how can we run it? Well, we first need to tell SDDM about this new session, which means we need to add a session to `/usr/share/wayland-sessions`. But how can we add our KDE development session to `/usr` if it is read-only? Fortunately, there is one exception to the whole `/usr` being immutable thing:
+
+```
+❯ ls -l /usr/local
+lrwxrwxrwx. 6 root root 15 Mar  5  2024 /usr/local -> ../var/usrlocal
+```
+
+Since `/usr/local` is actually a symbolic link to a the writeable `/var` directory and SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually just copy our session there with little fuss.
+
+```bash
+session_launch_script=~/.local/bin/start-plasma-dev-session
+kde_dir=/var/local/kde-dev/kde
+
+podman container cp kde-dev:/usr/local/share/wayland-sessions/plasmawayland-dev6.desktop /tmp
+sed -i "s@^Exec=.*@Exec=${session_launch_script}@" /tmp/plasmawayland-dev6.desktop
+
+sudo mv /tmp/plasmawayland-dev6.desktop /usr/local/share/wayland-sessions
+cat << EOF > ${session_launch_script}
+${kde_dir}/usr/lib64/libexec/kactivitymanagerd & disown
+${kde_dir}/usr/lib64/libexec/plasma-dbus-run-session-if-needed ${kde_dir}/usr/lib64/libexec/startplasma-dev.sh -wayland
+EOF
+chmod +x ${session_launch_script}
+```
+
+It may look a little complicated, but we're essentially just adding a session in `/usr/local/share/wayland-sessions` that calls a custom script `~/.local/bin/start-plasma-dev-session` that will run our custom KDE Plasma in `/var/local/kde-dev/kde/usr`.
+
+
+
+## Thanks
+
+This post was inspired by similar attempts to ease KDE development on Fedora Atomic, including [silverhadch/bazzite-kde-dx](https://github.com/silverhadch/bazzite-kde-dx), [whelanh/aurora-kdegit-dx](https://github.com/whelanh/aurora-kdegit-dx) and the [Filotimo Project](https://github.com/filotimo-project). 
