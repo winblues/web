@@ -29,14 +29,13 @@ mkdir -p /var/local/kde-dev/home/.config
 cp ./kde-builder.yaml /var/local/kde-dev/home/.config
 
 distrobox create \
-  --name kde-dev \
-  --home /var/local/kde-dev/home \
-  --init \
-  --additional-packages "systemd" \
-  --pull \
-  --image ghcr.io/ledif/ublue-kde-dev:latest
-
-podman start kde-dev
+	--name kde-dev \
+	--home /var/local/kde-dev/home \
+	--volume /var/local/kde-dev/kde:/var/local/kde-dev/kde:Z \
+	--init \
+	--additional-packages "systemd" \
+	--pull \
+	--image ghcr.io/ledif/ublue-kde-dev:latest
 ```
 
 In the above configuration, we have a directory tree in `/var/local/kde-dev` for the source files, the intermediate build files and the final `/usr` directory tree representing the entire desktop environment. We also create a separate home directory for the container, just so that our Bash history and profiles are not intermixed with those on the host.
@@ -64,6 +63,8 @@ In the above configuration, we have a directory tree in `/var/local/kde-dev` for
         └── share
 ```
 
+The provided [kde-builder.yml](https://github.com/ledif/ublue-kde-dev/blob/main/kde-builder.yaml) file tells the KDE build system to utilize the shared `/var/local/kde-dev/kde` directory.
+
 After this is set up, you can then enter into the container and build KDE Plasma.
 
 ```bash
@@ -71,18 +72,18 @@ distrobox enter kde-dev
 kde-builder workspace
 ```
 
-It will probably take a long time to compile, so a nice walk around the neighborhood might be in order.
+It will definitely take a long time to compile, so consider taking a nice long walk around the neighborhood in the meantime.
 
 ## Running Your Own Plasma
 
-After the entire project finishes building, all of the artifacts are now available on the host in `/var/local/kde-dev/kde/usr`, so how can we run it? Well, we first need to tell SDDM about this new session, which means we need to add a session to `/usr/share/wayland-sessions`. But how can we add our KDE development session to `/usr` if it is read-only? Fortunately, there is one exception to the whole `/usr` being immutable thing:
+After the entire project finishes building, the build artifacts are now available on the host in `/var/local/kde-dev/kde/usr`, so how can we run it? Well, we first need to tell SDDM it, which means we need to add a session to `/usr/share/wayland-sessions`. But how can we add our KDE development session to `/usr` if it is read-only? Fortunately, there is one exception to the whole `/usr` being immutable thing:
 
 ```
 ❯ ls -l /usr/local
 lrwxrwxrwx. 6 root root 15 Mar  5  2024 /usr/local -> ../var/usrlocal
 ```
 
-Since `/usr/local` is actually a symbolic link to a the writeable `/var` directory and SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually just copy our session there with little fuss.
+Since `/usr/local` is actually a symbolic link to the writeable `/var` directory and SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually just copy our session there with little fuss.
 
 ```bash
 session_launch_script=~/.local/bin/start-plasma-dev-session
