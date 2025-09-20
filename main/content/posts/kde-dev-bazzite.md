@@ -4,6 +4,8 @@ date: 2025-09-19T12:00:00Z
 draft: false
 ---
 
+<a href="/images/bazzite-kde-dev.webp"><img src="/images/bazzite-kde-dev.webp" /></a>
+
 [Bazzite](https://bazzite.gg), a gaming-focused Linux operating system, has garnered a reputation of being a good choice for playing video games but too restrictive for actual development work due to its read-only `/usr` partition and its weird package management quirks. Often, people get tripped up by attempting to install certain toolchains for development work, realizing that installing packages on top of the bootable container image requires a reboot and eventually conclude that this friction is an indication of the operating system not being suitable for serious software development.
 
 Here, I will argue that the restrictions imposed by its so-called "immutable" nature are in actuality useful guardrails that help isolate your day-to-day desktop activities from your development work. By providing a strong emphasis on containerization, you are free to install, explore, develop and destroy to your heart's content within the confines of a sandboxed environment without worry. You are free to hack away without the sneaking worry that by somehow upgrading the system's `clang++` to a version required for your development work, you will inadvertently break the ABI of some shared-library that your web browser depended on and now you cannot navigate to double-u double-u double-u dot reddit dot com to doomscroll for hours on end.
@@ -86,24 +88,23 @@ lrwxrwxrwx. 6 root root 15 Mar  5  2024 /usr/local -> ../var/usrlocal
 Since `/usr/local` is actually a symbolic link to the writeable `/var` directory and SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually just copy our session there with little fuss.
 
 ```bash
-session_launch_script=~/.local/bin/start-plasma-dev-session
-kde_dir=/var/local/kde-dev/kde
-
-podman container cp kde-dev:/usr/local/share/wayland-sessions/plasmawayland-dev6.desktop /tmp
-sed -i "s@^Exec=.*@Exec=${session_launch_script}@" /tmp/plasmawayland-dev6.desktop
-
-sudo mv /tmp/plasmawayland-dev6.desktop /usr/local/share/wayland-sessions
-cat << EOF > ${session_launch_script}
-${kde_dir}/usr/lib64/libexec/kactivitymanagerd & disown
-${kde_dir}/usr/lib64/libexec/plasma-dbus-run-session-if-needed ${kde_dir}/usr/lib64/libexec/startplasma-dev.sh -wayland
+cat << EOF > /tmp/plasmawayland-dev6.desktop
+[Desktop Entry]
+Exec=/var/local/kde-dev/kde/usr/lib64/libexec/plasma-dbus-run-session-if-needed /var/local/kde-dev/kde/usr/lib64/libexec/startplasma-dev.sh -wayland
+DesktopNames=KDE
+Name=Plasma (Dev)
+Comment=Plasma Development by KDE
+X-KDE-PluginInfo-Version=6.4.4
 EOF
-chmod +x ${session_launch_script}
+
+sudo mkdir -p /usr/local/share/wayland-sessions
+sudo mv /tmp/plasmawayland-dev6.desktop /usr/local/share/wayland-sessions
 ```
 
-It may look a little complicated, but we're essentially just adding a session in `/usr/local/share/wayland-sessions` that calls a custom script `~/.local/bin/start-plasma-dev-session` that will run our custom KDE Plasma in `/var/local/kde-dev/kde/usr`.
+Now, you can log out of your session and pick the new "Plasma (Dev)"" choice to run your fresh-from-source farm-to-table newly built KDE Plasma. 
 
+---
 
+#### Thanks
 
-## Thanks
-
-This post was inspired by similar attempts to ease KDE development on Fedora Atomic, including [silverhadch/bazzite-kde-dx](https://github.com/silverhadch/bazzite-kde-dx), [whelanh/aurora-kdegit-dx](https://github.com/whelanh/aurora-kdegit-dx) and the [Filotimo Project](https://github.com/filotimo-project). 
+This post was inspired by similar projects that ease KDE development on Fedora Atomic, including [silverhadch/bazzite-kde-dx](https://github.com/silverhadch/bazzite-kde-dx), [whelanh/aurora-kdegit-dx](https://github.com/whelanh/aurora-kdegit-dx) and the [Filotimo Project](https://github.com/filotimo-project). 
