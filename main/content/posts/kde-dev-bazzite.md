@@ -91,7 +91,7 @@ We first need to tell SDDM about it, which means adding a session to `/usr/share
 lrwxrwxrwx. 6 root root 15 Mar  5  2024 /usr/local -> ../var/usrlocal
 ```
 
-`/usr/local` is actually a symbolic link to the writeable `/var` directory! Since SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually add our session there with little fuss.
+`/usr/local` is actually a symbolic link to the writeable `/var/usrlocal` directory! Since SDDM can pick up sessions in `/usr/local/share/wayland-sessions`, we can actually add our session there with little fuss.
 
 ```bash
 cat << EOF > /tmp/plasmawayland-dev6.desktop
