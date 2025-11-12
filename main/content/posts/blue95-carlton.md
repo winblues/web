@@ -4,7 +4,7 @@ date: 2025-11-12T12:00:00Z
 draft: false
 ---
 
-<a href="/images/blue95-carlton.webp"><img src="/images/blue95-carlton.webp" /></a>
+<a href="/images/post-images/blue95-carlton/desktop.webp"><img src="/images/post-images/blue95-carlton/desktop.webp" /></a>
 
 We're excited to announce that **Blue95 Carlton**, based on [Fedora 43](https://fedoramagazine.org/announcing-fedora-linux-43), is now generally available!
 
@@ -18,6 +18,20 @@ This post will go over some of the changes and improvements that Blue95 has made
 
 Special thanks to [Timothée Ravier](https://github.com/travier) for maintaining the upstream Fedora Xfce Atomic images and helping navigate a deprecation scare!
 
+### Clippy
+
+### PowerPoint Templates
+
+<a href="/images/post-images/blue95-carlton/ppt.webp"><img src="/images/post-images/blue95-carlton/ppt.webp" /></a>
+
+
+A new `ujust` recipe has been introduced to install PowerPoint templates from old products such as Office 97 that have been collected and hosted in the Internet Archive's [Microsoft Powerpoint Templates Pack](https://archive.org/details/powerpoint-templates).
+
+```bash
+ujust install-ppt-templates
+```
+
+The templates will be placed in `~/Documents/Presentations/Templates`.
 
 #### Install Now
 
