@@ -8,7 +8,7 @@ draft: false
 
 We're excited to announce that **Blue95 Carlton**, based on [Fedora 43](https://fedoramagazine.org/announcing-fedora-linux-43), is now generally available!
 
-This post will go over some of the changes and improvements that Blue95 has made since the previous version **Blue95 Topanga** was introduced.
+This post will go over some of the changes and improvements that Blue95 has made since the previous version [Blue95 Topanga](https://blues.win/posts/blue95-topanga) was introduced.
 
 ## What's New
 
